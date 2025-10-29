@@ -25,7 +25,12 @@ def sanitize_filename(title):
 def get_page_path(title):
     """Get full path for a wiki page"""
     filename = sanitize_filename(title) + '.md'
-    return os.path.join(WIKI_DIR, filename)
+    path = os.path.join(WIKI_DIR, filename)
+    # Prevent directory traversal attacks
+    path = os.path.normpath(path)
+    if not path.startswith(os.path.normpath(WIKI_DIR)):
+        raise ValueError("Invalid page path")
+    return path
 
 
 def load_page(title):
@@ -76,25 +81,33 @@ def index():
 @app.route('/page/<path:title>')
 def view_page(title):
     """View a wiki page"""
-    content = load_page(title)
-    if content is None:
-        return render_template('create.html', title=title)
-    
-    html_content = markdown.markdown(content, extensions=['fenced_code', 'tables', 'nl2br'])
-    return render_template('view.html', title=title, content=html_content, raw_content=content)
+    try:
+        content = load_page(title)
+        if content is None:
+            return render_template('create.html', title=title)
+        
+        html_content = markdown.markdown(content, extensions=['fenced_code', 'tables', 'nl2br'])
+        return render_template('view.html', title=title, content=html_content, raw_content=content)
+    except ValueError:
+        flash('Invalid page name', 'error')
+        return redirect(url_for('index'))
 
 
 @app.route('/edit/<path:title>', methods=['GET', 'POST'])
 def edit_page(title):
     """Edit a wiki page"""
-    if request.method == 'POST':
-        content = request.form.get('content', '')
-        save_page(title, content)
-        flash(f'Page "{title}" saved successfully!', 'success')
-        return redirect(url_for('view_page', title=title))
-    
-    content = load_page(title) or ''
-    return render_template('edit.html', title=title, content=content)
+    try:
+        if request.method == 'POST':
+            content = request.form.get('content', '')
+            save_page(title, content)
+            flash(f'Page "{title}" saved successfully!', 'success')
+            return redirect(url_for('view_page', title=title))
+        
+        content = load_page(title) or ''
+        return render_template('edit.html', title=title, content=content)
+    except ValueError:
+        flash('Invalid page name', 'error')
+        return redirect(url_for('index'))
 
 
 @app.route('/create', methods=['GET', 'POST'])
@@ -144,4 +157,8 @@ def wikilink_filter(text):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Debug mode should only be enabled during development
+    # Set to False for production deployments
+    import os as env_os
+    debug_mode = env_os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(debug=debug_mode, host='0.0.0.0', port=5000)

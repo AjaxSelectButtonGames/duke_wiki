@@ -36,6 +36,16 @@ python app.py
 
 The wiki will be available at: `http://localhost:5000`
 
+**For development with debug mode:**
+```bash
+export FLASK_DEBUG=true  # Linux/Mac
+# or
+set FLASK_DEBUG=true     # Windows
+python app.py
+```
+
+**Note:** Debug mode is disabled by default for security. Only enable it during development.
+
 ## Usage
 
 ### Creating Pages
@@ -107,11 +117,18 @@ Feel free to edit or delete these pages and create your own!
 
 ## Configuration
 
+### Security Settings
+
+The application includes several security features:
+- **Path validation**: Prevents directory traversal attacks
+- **Debug mode control**: Disabled by default for production
+- **Input sanitization**: Page titles are sanitized before file operations
+
 ### Changing the Port
 
 Edit `app.py` and modify the last line:
 ```python
-app.run(debug=True, host='0.0.0.0', port=5000)  # Change port here
+app.run(debug=debug_mode, host='0.0.0.0', port=5000)  # Change port here
 ```
 
 ### Secret Key
@@ -119,6 +136,11 @@ app.run(debug=True, host='0.0.0.0', port=5000)  # Change port here
 For production use, change the secret key in `app.py`:
 ```python
 app.secret_key = 'your-secure-secret-key-here'
+```
+
+Or better yet, use an environment variable:
+```python
+app.secret_key = os.environ.get('SECRET_KEY', 'fallback-secret-key')
 ```
 
 ## Development
