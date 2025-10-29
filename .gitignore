@@ -38,7 +38,10 @@ instance/
 .DS_Store
 Thumbs.db
 
-# Wiki data
+# Wiki data - exclude user-created pages but keep sample pages
 wiki_data/*.md
 !wiki_data/Home.md
-!wiki_data/example*.md
+!wiki_data/Character_Classes.md
+!wiki_data/Game_Design_Document.md
+!wiki_data/Combat_Mechanics.md
+!wiki_data/Technical_Architecture.md
