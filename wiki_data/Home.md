@@ -1,6 +1,6 @@
 # Welcome to Duke Wiki
 
-Welcome to the **Duke County MMORPG** Research & Development Wiki! This is your central knowledge base for all information related to our game development.
+Welcome to the **Duke County** Research & Development Wiki! This is your central knowledge base for all information related to our game development.
 
 ## Quick Links
 
@@ -13,7 +13,7 @@ Welcome to the **Duke County MMORPG** Research & Development Wiki! This is your 
 
 ## About Duke County
 
-Duke County is an immersive MMORPG set in a fantasy medieval world where players can explore, fight, trade, and build their legacy. Our R&D team uses this wiki to document game systems, design decisions, and technical implementation details.
+Duke County is an immersive Western survival game set in the 1840s American frontier. Players must survive in the harsh wilderness, hunt for food, build shelters, defend against outlaws and wildlife, and forge their path in the untamed West. Our R&D team uses this wiki to document game systems, design decisions, and technical implementation details.
 
 ## Getting Started
 
@@ -34,10 +34,10 @@ Duke County is an immersive MMORPG set in a fantasy medieval world where players
 
 ## Recent Areas of Focus
 
-- **Character Progression System**: Designing skill trees and leveling mechanics
-- **World Map**: Creating diverse regions and points of interest
-- **Multiplayer Infrastructure**: Scaling to support thousands of concurrent players
-- **Economy System**: Balancing in-game currency and trading
+- **Survival Mechanics**: Hunger, thirst, temperature, and health systems
+- **Frontier Map**: Creating authentic 1840s landscapes from plains to mountains
+- **Multiplayer Systems**: Player settlements, trading posts, and PvP zones
+- **Crafting & Building**: Authentic period-accurate construction and equipment
 
 ---
 

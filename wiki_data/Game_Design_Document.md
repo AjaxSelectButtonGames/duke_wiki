@@ -2,75 +2,87 @@
 
 ## Overview
 
-**Project Name**: Duke County MMORPG  
-**Genre**: Fantasy MMORPG  
+**Project Name**: Duke County  
+**Genre**: Western Survival Game  
+**Setting**: 1840s American Frontier  
 **Platform**: PC (Windows, macOS, Linux)  
-**Target Audience**: 16-35 year old gamers who enjoy deep RPG mechanics  
+**Target Audience**: 18-40 year old gamers who enjoy survival and historical games  
 **Development Status**: Pre-Alpha
 
 ## Core Gameplay Loop
 
-1. **Explore** - Discover new areas, towns, and dungeons
-2. **Fight** - Engage in combat with monsters and other players
-3. **Progress** - Gain experience, level up, unlock new abilities
-4. **Socialize** - Join guilds, trade with others, form parties
-5. **Repeat** - New content at endgame keeps players engaged
+1. **Survive** - Manage hunger, thirst, temperature, and injuries
+2. **Gather** - Hunt animals, mine resources, forage for supplies
+3. **Craft** - Create tools, weapons, clothing, and shelter
+4. **Explore** - Discover the vast frontier wilderness and settlements
+5. **Interact** - Trade with NPCs, join or fight other players
 
 ## Key Features
 
-### Open World
-- Seamless world with no loading screens between zones
-- Day/night cycle affecting gameplay
-- Dynamic weather system
-- 8 distinct regions, each with unique biomes and creatures
+### Survival Systems
+- **Hunger & Thirst**: Must regularly eat and drink to survive
+- **Temperature**: Weather and clothing affect body temperature
+- **Injuries**: Wounds require treatment with bandages and medicine
+- **Stamina**: Physical activities drain stamina, rest to recover
+
+### Open Frontier World
+- Vast wilderness spanning prairies, forests, mountains, and deserts
+- Dynamic weather affecting gameplay (rain, snow, fog, storms)
+- Day/night cycle with dangers at night
+- Wildlife including deer, elk, bears, wolves, and bison
+- Hostile bandits and outlaws roaming the territory
 
 ### Combat System
-- Real-time action combat
-- Skill-based with targeting reticle
-- Combo system for chaining abilities
-- Dodge/block mechanics for active defense
+- Realistic gunplay with period-accurate weapons
+- Revolvers, rifles, shotguns, and bows
+- Manual aiming with bullet physics
+- Cover system for tactical combat
+- Melee combat with knives and hatchets
 
-### Social Features
-- Guild system with up to 100 members
-- Party system (up to 5 players)
-- Global, local, guild, and whisper chat
-- Friend list and social panel
-- Player trading and mail system
+### Building & Crafting
+- Construct camps, cabins, and eventually full homesteads
+- Period-accurate crafting recipes
+- Gather resources: wood, stone, ore, animal hides
+- Craft weapons, tools, clothing, and supplies
+- Establish trading posts and settlements
+
+### Multiplayer Features
+- Player-run settlements and towns
+- Trading between players
+- Form posses (up to 8 players)
+- PvP in lawless territories
+- Cooperative hunts and raids
+- Player-driven economy
 
 ### Progression
-- Level cap: 100
-- Skill-based progression alongside levels
-- Equipment tiers: Common, Uncommon, Rare, Epic, Legendary
-- Crafting professions for all players
+- Skill-based system (no levels)
+- Improve through practice (shoot to get better at shooting)
+- Unlock recipes by discovering them
+- Build reputation with various factions
+- Establish your legacy in the frontier
 
-### PvE Content
-- **Dungeons**: 5-player instanced content
-- **Raids**: 10-20 player large-scale encounters
-- **World Bosses**: Open world group events
-- **Quests**: Main story, side quests, daily quests
-
-### PvP Content
-- **Duels**: 1v1 friendly competitions
-- **Arenas**: 2v2, 3v3, 5v5 ranked matches
-- **Battlegrounds**: Large-scale objective-based battles
-- **Open World PvP**: Designated conflict zones
+### Content Types
+- **Story Missions**: Follow the tale of westward expansion
+- **Side Activities**: Bounty hunting, treasure maps, poker games
+- **Challenges**: Hunting challenges, sharpshooting competitions
+- **Random Events**: Stagecoach robberies, wild animal attacks, stranger encounters
 
 ## Technical Requirements
 
-- Server capacity: 10,000 concurrent players per region
+- Server capacity: 50-100 players per server
 - Client performance: 60 FPS on mid-range hardware
-- Network: < 100ms latency for responsive combat
-- Storage: ~50GB install size
+- Network: < 150ms latency for responsive combat
+- Storage: ~40GB install size
 
 ## Monetization
 
-- **Business Model**: Buy-to-play ($40 base game)
-- **Optional Subscription**: $15/month for premium benefits
-- **Cosmetic Shop**: Skins, mounts, pets (no pay-to-win)
+- **Business Model**: Buy-to-play ($30 base game)
+- **Cosmetic Shop**: Clothing, horse skins, camp decorations (no pay-to-win)
+- **DLC Expansions**: New regions and storylines
 
 ## Development Timeline
 
-- **Q4 2024**: Core systems prototype
+- **Q4 2024**: Core survival systems prototype
 - **Q1 2025**: Alpha testing with closed group
 - **Q2 2025**: Beta launch
 - **Q4 2025**: Full release
@@ -80,4 +92,4 @@
 - [[Technical Architecture]]
 - [[Character Classes]]
 - [[World Building]]
-- [[Quest System]]
+- [[Combat Mechanics]]
