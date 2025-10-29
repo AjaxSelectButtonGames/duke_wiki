@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Create New Page - Duke Wiki{% endblock %}
+
+{% block content %}
+<h2>➕ Create New Page</h2>
+
+{% if title %}
+    <p>The page "{{ title }}" does not exist. Would you like to create it?</p>
+    <div class="action-buttons">
+        <a href="{{ url_for('edit_page', title=title) }}" class="btn">✏️ Create Page</a>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">🏠 Home</a>
+    </div>
+{% else %}
+    <form method="POST" action="{{ url_for('create_page') }}">
+        <div class="form-group">
+            <label for="title">Page Title:</label>
+            <input type="text" id="title" name="title" placeholder="e.g., Character Classes" required>
+        </div>
+        
+        <div class="action-buttons">
+            <button type="submit" class="btn">➡️ Continue</button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">❌ Cancel</a>
+        </div>
+    </form>
+{% endif %}
+{% endblock %}

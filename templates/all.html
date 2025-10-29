@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}All Pages - Duke Wiki{% endblock %}
+
+{% block content %}
+<h2>📚 All Pages</h2>
+
+{% if pages %}
+    <p>Total pages: {{ pages|length }}</p>
+    <ul class="page-list">
+        {% for page in pages %}
+            <li><a href="{{ url_for('view_page', title=page) }}">{{ page }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No pages yet. <a href="{{ url_for('create_page') }}">Create the first page!</a></p>
+{% endif %}
+
+<div class="action-buttons">
+    <a href="{{ url_for('create_page') }}" class="btn">➕ Create New Page</a>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">🏠 Home</a>
+</div>
+{% endblock %}
