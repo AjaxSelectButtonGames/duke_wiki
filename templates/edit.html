@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Edit {{ title }} - Duke Wiki{% endblock %}
+
+{% block content %}
+<h2>✏️ Editing: {{ title }}</h2>
+
+<form method="POST" action="{{ url_for('edit_page', title=title) }}">
+    <div class="form-group">
+        <label for="content">Content (Markdown):</label>
+        <textarea id="content" name="content" required>{{ content }}</textarea>
+    </div>
+    
+    <div class="action-buttons">
+        <button type="submit" class="btn">💾 Save Page</button>
+        <a href="{{ url_for('view_page', title=title) }}" class="btn btn-secondary">❌ Cancel</a>
+    </div>
+</form>
+
+<div class="markdown-help">
+    <h4>Markdown Quick Reference:</h4>
+    <p>
+        <strong>Headers:</strong> <code># H1</code>, <code>## H2</code>, <code>### H3</code><br>
+        <strong>Bold:</strong> <code>**text**</code> or <code>__text__</code><br>
+        <strong>Italic:</strong> <code>*text*</code> or <code>_text_</code><br>
+        <strong>Lists:</strong> <code>- item</code> or <code>1. item</code><br>
+        <strong>Links:</strong> <code>[text](url)</code><br>
+        <strong>Wiki Links:</strong> <code>[[Page Name]]</code><br>
+        <strong>Code:</strong> <code>`code`</code> or <code>```code block```</code>
+    </p>
+</div>
+{% endblock %}
